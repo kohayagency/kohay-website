@@ -387,16 +387,11 @@ header.site-header {
   .services-grid { grid-template-columns: 1fr; }
 }
 
-/* Clients row */
-.clients-row {
-  display: grid;
-  grid-template-columns: repeat(9, 1fr);
-  gap: 12px;
-  margin-top: 32px;
-}
-
+/* Clients row — same horizontal scroll-strip component as .reel-strip-*
+   (see below): .client-logo is just another fixed-size item placed inside
+   a .reel-strip-track, so it reuses the same wrap/scroll/arrow logic. */
 .client-logo {
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 1 / 1;
   background: #1B1B1B;
   border: 1px solid var(--border);
   border-radius: 6px;
@@ -413,13 +408,6 @@ header.site-header {
   max-width: 80%;
   max-height: 70%;
   object-fit: contain;
-}
-
-@media (max-width: 860px) {
-  .clients-row { grid-template-columns: repeat(4, 1fr); }
-}
-@media (max-width: 520px) {
-  .clients-row { grid-template-columns: repeat(3, 1fr); }
 }
 
 /* Why Kohay grid */
@@ -553,7 +541,8 @@ header.site-header {
   padding-bottom: 10px;
 }
 
-.reel-strip-track .video-card {
+.reel-strip-track .video-card,
+.reel-strip-track .client-logo {
   flex: 0 0 180px;
   width: 180px;
   min-width: 180px;
@@ -586,7 +575,8 @@ header.site-header {
 .reel-arrow-next { right: -8px; }
 
 @media (max-width: 860px) {
-  .reel-strip-track .video-card { flex-basis: 150px; width: 150px; min-width: 150px; max-width: 150px; }
+  .reel-strip-track .video-card,
+  .reel-strip-track .client-logo { flex-basis: 150px; width: 150px; min-width: 150px; max-width: 150px; }
   .reel-arrow { display: none; }
 }
 

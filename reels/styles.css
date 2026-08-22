@@ -429,6 +429,29 @@ header.site-header {
   margin-bottom: 18px;
 }
 
+.launch-badge {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  font-family: var(--font-body);
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  padding: 4px 9px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.plan-price-old {
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text-muted);
+  text-decoration: line-through;
+  margin-bottom: 2px;
+}
+
 .plan-price {
   font-family: var(--font-display);
   font-size: 34px;

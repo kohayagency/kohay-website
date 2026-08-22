@@ -558,19 +558,23 @@ header.site-header {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  border: 1px solid var(--border-strong);
-  background: var(--bg);
-  color: var(--text);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.1);
+  color: #F5F5F3;
   font-size: 18px;
   line-height: 1;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: border-color 0.15s ease, color 0.15s ease;
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
 }
 
-.reel-arrow:hover { border-color: var(--accent); color: var(--accent-text); }
+.reel-arrow:hover {
+  background: rgba(255, 31, 172, 0.12);
+  border-color: var(--accent);
+  color: var(--accent-text);
+}
 .reel-arrow-prev { left: -8px; }
 .reel-arrow-next { right: -8px; }
 

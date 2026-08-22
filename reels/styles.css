@@ -238,6 +238,128 @@ header.site-header {
 .banner h2 { margin-bottom: 12px; }
 .banner p { max-width: 480px; margin-bottom: 0; }
 
+/* Founder */
+.founder-grid {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.founder-photo {
+  aspect-ratio: 4 / 5;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  font-size: 13px;
+  text-align: center;
+  padding: 16px;
+}
+
+.founder-name { margin-bottom: 4px; }
+
+.founder-role {
+  font-size: 15px;
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+}
+
+.founder-bio {
+  max-width: 640px;
+  margin-bottom: 32px;
+}
+
+.founder-stats {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-bottom: 32px;
+}
+
+.founder-stat-num {
+  font-family: var(--font-display);
+  font-size: 26px;
+  color: var(--accent-text);
+}
+
+.founder-stat-label {
+  font-size: 13px;
+  color: var(--text-muted);
+  max-width: 140px;
+}
+
+.founder-more {
+  color: var(--text-secondary);
+  margin-bottom: 16px;
+}
+
+@media (max-width: 860px) {
+  .founder-grid { grid-template-columns: 1fr; }
+  .founder-photo { max-width: 260px; }
+}
+
+/* Services grid */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-top: 40px;
+}
+
+.service-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 26px 22px;
+}
+
+.service-card h3 { font-size: 17px; margin-bottom: 8px; }
+.service-card p { font-size: 14px; margin-bottom: 18px; }
+
+.service-price {
+  font-family: var(--font-display);
+  font-size: 14px;
+  color: var(--accent-text);
+}
+
+@media (max-width: 860px) {
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 520px) {
+  .services-grid { grid-template-columns: 1fr; }
+}
+
+/* Clients row */
+.clients-row {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.client-logo {
+  aspect-ratio: 16 / 9;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+@media (max-width: 860px) {
+  .clients-row { grid-template-columns: repeat(4, 1fr); }
+}
+@media (max-width: 520px) {
+  .clients-row { grid-template-columns: repeat(3, 1fr); }
+}
+
 /* Why Kohay grid */
 .why-grid {
   display: grid;

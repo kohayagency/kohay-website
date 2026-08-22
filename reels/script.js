@@ -30,6 +30,17 @@ document.querySelectorAll('[data-tab-target]').forEach(function (btn) {
   });
 });
 
+// Reels strip: let vertical mouse-wheel scroll the horizontal carousel
+// (trackpad horizontal swipe and touch swipe already work natively via overflow-x)
+document.querySelectorAll('.reel-strip-scroll').forEach(function (el) {
+  el.addEventListener('wheel', function (e) {
+    if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+      el.scrollLeft += e.deltaY;
+      e.preventDefault();
+    }
+  }, { passive: false });
+});
+
 // FAQ accordion
 document.querySelectorAll('.faq-item').forEach(function (item) {
   var question = item.querySelector('.faq-q');

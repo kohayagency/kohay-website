@@ -341,6 +341,38 @@ header.site-header {
 .category-panel { display: none; }
 .category-panel.active { display: block; }
 
+/* Reels strip (horizontal scroll carousel) */
+.reel-strip-scroll {
+  margin-top: 32px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x proximity;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-strong) transparent;
+}
+
+.reel-strip-scroll::-webkit-scrollbar { height: 6px; }
+.reel-strip-scroll::-webkit-scrollbar-track { background: transparent; }
+.reel-strip-scroll::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 3px; }
+
+.reel-strip-track {
+  display: flex;
+  gap: 16px;
+  width: max-content;
+  padding-bottom: 10px;
+}
+
+.reel-strip-track .video-card {
+  width: 200px;
+  flex: none;
+  scroll-snap-align: start;
+}
+
+@media (max-width: 860px) {
+  .reel-strip-track .video-card { width: 160px; }
+}
+
 /* Packages */
 .package-toggle {
   display: flex;

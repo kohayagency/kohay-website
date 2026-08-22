@@ -342,8 +342,12 @@ header.site-header {
 .category-panel.active { display: block; }
 
 /* Reels strip (horizontal scroll carousel) */
-.reel-strip-scroll {
+.reel-strip-wrap {
+  position: relative;
   margin-top: 32px;
+}
+
+.reel-strip-scroll {
   overflow-x: auto;
   overflow-y: hidden;
   scroll-snap-type: x proximity;
@@ -358,19 +362,48 @@ header.site-header {
 
 .reel-strip-track {
   display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
   gap: 16px;
   width: max-content;
   padding-bottom: 10px;
 }
 
 .reel-strip-track .video-card {
-  width: 200px;
-  flex: none;
+  flex: 0 0 180px;
+  width: 180px;
+  min-width: 180px;
+  max-width: 180px;
   scroll-snap-align: start;
 }
 
+.reel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--border-strong);
+  background: var(--bg);
+  color: var(--text);
+  font-size: 18px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+.reel-arrow:hover { border-color: var(--accent); color: var(--accent-text); }
+.reel-arrow-prev { left: -8px; }
+.reel-arrow-next { right: -8px; }
+
 @media (max-width: 860px) {
-  .reel-strip-track .video-card { width: 160px; }
+  .reel-strip-track .video-card { flex-basis: 150px; width: 150px; min-width: 150px; max-width: 150px; }
+  .reel-arrow { display: none; }
 }
 
 /* Packages */

@@ -41,6 +41,21 @@ document.querySelectorAll('.reel-strip-scroll').forEach(function (el) {
   }, { passive: false });
 });
 
+// Reels strip: prev/next arrow buttons
+document.querySelectorAll('.reel-strip-wrap').forEach(function (wrap) {
+  var scroller = wrap.querySelector('.reel-strip-scroll');
+  var prevBtn = wrap.querySelector('.reel-arrow-prev');
+  var nextBtn = wrap.querySelector('.reel-arrow-next');
+  if (!scroller) return;
+
+  function scrollByDirection(dir) {
+    scroller.scrollBy({ left: dir * scroller.clientWidth * 0.8, behavior: 'smooth' });
+  }
+
+  if (prevBtn) prevBtn.addEventListener('click', function () { scrollByDirection(-1); });
+  if (nextBtn) nextBtn.addEventListener('click', function () { scrollByDirection(1); });
+});
+
 // FAQ accordion
 document.querySelectorAll('.faq-item').forEach(function (item) {
   var question = item.querySelector('.faq-q');

@@ -241,55 +241,69 @@ header.site-header {
 /* Founder */
 .founder-grid {
   display: grid;
-  grid-template-columns: 300px 1fr;
+  grid-template-columns: 200px 1fr;
   gap: 48px;
   align-items: start;
 }
 
 .founder-photo {
-  aspect-ratio: 4 / 5;
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
+  width: 200px;
+  height: 200px;
+  flex: none;
+  background: #1B1B1B;
+  border: 1px solid #2A2A2A;
+  border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--text-muted);
   font-size: 13px;
   text-align: center;
-  padding: 16px;
+  padding: 12px;
 }
 
-.founder-name { margin-bottom: 4px; }
+.founder-name {
+  font-family: var(--font-display);
+  font-size: 32px;
+  margin-bottom: 6px;
+}
 
 .founder-role {
-  font-size: 15px;
-  color: var(--text-secondary);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent);
   margin-bottom: 20px;
 }
 
 .founder-bio {
-  max-width: 640px;
+  max-width: 520px;
   margin-bottom: 32px;
 }
 
 .founder-stats {
   display: flex;
-  gap: 40px;
-  flex-wrap: wrap;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 32px;
   margin-bottom: 32px;
+}
+
+.founder-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
 .founder-stat-num {
   font-family: var(--font-display);
-  font-size: 26px;
+  font-size: 22px;
   color: var(--accent-text);
 }
 
 .founder-stat-label {
-  font-size: 13px;
+  font-size: 11px;
   color: var(--text-muted);
-  max-width: 140px;
+  max-width: 120px;
 }
 
 .founder-more {
@@ -297,9 +311,27 @@ header.site-header {
   margin-bottom: 16px;
 }
 
+.founder-linkedin {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 22px;
+  border-radius: 20px;
+  border: 1px solid var(--border-strong);
+  background: transparent;
+  color: var(--text);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 14px;
+  text-decoration: none;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+.founder-linkedin:hover { border-color: var(--accent); color: var(--accent-text); }
+
 @media (max-width: 860px) {
   .founder-grid { grid-template-columns: 1fr; }
-  .founder-photo { max-width: 260px; }
+  .founder-stats { flex-wrap: wrap; }
 }
 
 /* Services grid */
@@ -311,19 +343,31 @@ header.site-header {
 }
 
 .service-card {
-  background: var(--card);
+  background: #1B1B1B;
   border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 26px 22px;
+  border-radius: 6px;
+  padding: 22px;
 }
 
-.service-card h3 { font-size: 17px; margin-bottom: 8px; }
-.service-card p { font-size: 14px; margin-bottom: 18px; }
+.service-card h3 {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.service-card p {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-bottom: 18px;
+}
 
 .service-price {
-  font-family: var(--font-display);
-  font-size: 14px;
-  color: var(--accent-text);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--accent);
 }
 
 @media (max-width: 860px) {
@@ -343,9 +387,9 @@ header.site-header {
 
 .client-logo {
   aspect-ratio: 16 / 9;
-  background: var(--card);
+  background: #1B1B1B;
   border: 1px solid var(--border);
-  border-radius: var(--radius);
+  border-radius: 6px;
   display: flex;
   align-items: center;
   justify-content: center;
